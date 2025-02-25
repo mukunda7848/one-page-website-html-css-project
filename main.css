@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding-top: 50px; /* To ensure content isn't hidden under the navbar */
+}
+
+nav {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 10px;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+nav .dropdown-container {
+  position: relative;
+}
+nav label {
+  color: #fff;
+  font-size: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.dropdown-options {
+  display: none; /* Hide dropdown options by default */
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 100;
+  width: 200px;
+}
+
+.dropdown-options a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dropdown-options a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show the dropdown options on hover */
+nav .dropdown-container:hover .dropdown-options {
+  display: block;
+}
+
+/* Hero Section Styles */
+.hero {
+  background-image: url(./color.jpg); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  padding: 15px 30px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero button:hover {
+  background-color: #e64a19;
+}
+
+/* Product Section Styles */
+.product-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.product-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-card {
+  width: 30%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 1.8rem;
+  margin: 15px 0;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  padding: 12px 25px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2); /* Shadow becomes bigger on hover */
+}
+
+.product-card button:hover {
+  background-color: #e64a19;
+}
+
+/* Mobile Responsiveness for Hero Section */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .hero button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+  .product-card {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  .product-card {
+    width: 100%;
+  }
+}
+/* Add some content below the navbar */
+.content {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  nav .logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  nav .dropdown-container {
+    width: 100%;
+    text-align: center;
+  }
+  .dropdown-options {
+    width: 100%;
+    text-align: center;
+  }
+  .dropdown-options a {
+    padding: 12px;
+    font-size: 18px;
+  }
+}
+/* Very small screens (mobile) */
+@media screen and (max-width: 480px) {
+  nav .logo {
+    font-size: 18px;
+  }
+  label {
+    font-size: 16px;
+  }
+}
+/* Contact Section Styles */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+}
+
+.contact-form button {
+  padding: 15px 30px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #e64a19;
+}
+
+/* Footer Section */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+footer .social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+  color: #ff5722;
+}/*# sourceMappingURL=main.css.map */
